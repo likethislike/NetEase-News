@@ -3,4 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <!--字体背景颜色-->
+    <color name="color_text_selected_bg">#E73544</color>
+    <color name="color_text_bg">#A89A9A</color>
 </resources>

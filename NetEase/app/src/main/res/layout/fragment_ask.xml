@@ -3,11 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
     <ListView
-        android:id="@+id/headlines_list_view"
+        android:id="@+id/ask_list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:divider="#c4c7c6"
-        android:dividerHeight="1dp" />
+        android:dividerHeight="1dp"/>
 </LinearLayout>

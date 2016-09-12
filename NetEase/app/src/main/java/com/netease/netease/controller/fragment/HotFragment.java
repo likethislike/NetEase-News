@@ -5,18 +5,18 @@ import android.widget.ListView;
 import com.netease.netease.R;
 
 /**
- * Created by dllo on 16/9/10.
+ * Created by dllo on 16/9/12.
  */
-public class HeadLinesFragment extends AbsBaseFragment{
-    private ListView headlv;
+public class HotFragment extends AbsBaseFragment{
+    private ListView hotlv;
     @Override
     protected int setLayout() {
-        return R.layout.fragmen_headlines;
+        return R.layout.fragment_ask;
     }
 
     @Override
     protected void initViews() {
-        headlv = findView(R.id.headlines_list_view);
+        hotlv = findView(R.id.hot_list_view);
 
     }
 

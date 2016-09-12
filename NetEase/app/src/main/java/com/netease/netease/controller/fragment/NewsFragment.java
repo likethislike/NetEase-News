@@ -14,9 +14,9 @@ import java.util.List;
  * Created by dllo on 16/9/10.
  */
 public class NewsFragment extends AbsBaseFragment {
-    private ViewPager viewPager;
-    private TabLayout tabLayout;
-    private List<Fragment> datas;
+    private ViewPager newsVp;
+    private TabLayout newsTl;
+    private List<Fragment> newsdata;
     private NewsAdapter newsAdapter;
 
     @Override
@@ -26,25 +26,25 @@ public class NewsFragment extends AbsBaseFragment {
 
     @Override
     protected void initViews() {
-        viewPager = findView(R.id.news_view_pager);
-        tabLayout = findView(R.id.news_tab_layout);
-        datas = new ArrayList<>();
+        newsVp = findView(R.id.news_view_pager);
+        newsTl = findView(R.id.news_tab_layout);
+        newsdata = new ArrayList<>();
         for (int i = 0; i < 16; i++) {
-            datas.add(new HeadLinesFragment());
+            newsdata.add(new HeadLinesFragment());
         }
         //创建适配器,并且绑定
-        newsAdapter = new NewsAdapter(getChildFragmentManager(), datas);
-        viewPager.setAdapter(newsAdapter);
+        newsAdapter = new NewsAdapter(getChildFragmentManager(), newsdata);
+        newsVp.setAdapter(newsAdapter);
         //设置ViewPager和TabLayout联动
-        tabLayout.setupWithViewPager(viewPager);
-        tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
+        newsTl.setupWithViewPager(newsVp);
+        newsTl.setTabMode(TabLayout.MODE_SCROLLABLE);
     }
 
     @Override
     protected void initDatas() {
         String[] title = {"头条", "精选", "娱乐", "体育", "网易号", "视频", "财经", "科技", "汽车", "时长", "图片", "直播", "热点", "军事", "历史", "家居"};
         for (int i = 0; i < 16; i++) {
-            tabLayout.getTabAt(i).setText(title[i]);
+            newsTl.getTabAt(i).setText(title[i]);
         }
 
     }

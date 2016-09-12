@@ -13,7 +13,6 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:gravity="center_vertical"
             android:layout_weight="1"
             android:background="#D0352A">
 
@@ -22,15 +21,19 @@
                 android:id="@+id/person_setting"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
+                android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="18dp"
+                android:layout_marginBottom="8dp"
                 android:text="设置"
                 android:textColor="#ecf0f1"
-                android:textSize="18sp" />
+                android:textSize="14sp" />
 
             <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="8dp"
                 android:layout_toLeftOf="@id/person_setting"
                 android:src="@mipmap/setting" />
         </RelativeLayout>

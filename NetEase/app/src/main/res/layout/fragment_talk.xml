@@ -7,18 +7,37 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="35dp"
         android:background="#D0352A">
 
         <android.support.design.widget.TabLayout
             android:id="@+id/talk_tab_layout"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_alignParentBottom="true"
             android:fillViewport="false"
             app:tabIndicatorColor="#ffffff"
             app:tabSelectedTextColor="#ffffff"
             app:tabTextColor="#bdc0c1" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginRight="20dp"
+                android:src="@mipmap/lq"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginRight="10dp"
+                android:src="@mipmap/aeg"/>
+
+        </LinearLayout>
     </RelativeLayout>
 
     <android.support.v4.view.ViewPager

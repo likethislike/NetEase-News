@@ -33,8 +33,6 @@ public class MainActivity extends AbsBaseActivity implements RadioGroup.OnChecke
         onlineFragment = new OnlineFragment();
         talkFragment = new TalkFragment();
         personFragment = new PersonFragment();
-        //透明状态栏
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
     }
 
     @Override

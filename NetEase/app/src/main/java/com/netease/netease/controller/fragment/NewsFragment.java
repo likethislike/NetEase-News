@@ -29,9 +29,17 @@ public class NewsFragment extends AbsBaseFragment {
         newsVp = findView(R.id.news_view_pager);
         newsTl = findView(R.id.news_tab_layout);
         newsdata = new ArrayList<>();
-        for (int i = 0; i < 16; i++) {
-            newsdata.add(new HeadLinesFragment());
-        }
+        //使用单列fragment方法
+        newsdata.add(HeadLinesFragment.newInstance("头条"));
+        newsdata.add(HeadLinesFragment.newInstance("精选"));
+        newsdata.add(HeadLinesFragment.newInstance("娱乐"));
+        newsdata.add(HeadLinesFragment.newInstance("体育"));
+        newsdata.add(HeadLinesFragment.newInstance("易网号"));
+        newsdata.add(HeadLinesFragment.newInstance("视频"));
+        newsdata.add(HeadLinesFragment.newInstance("财经"));
+        newsdata.add(HeadLinesFragment.newInstance("科技"));
+        newsdata.add(HeadLinesFragment.newInstance("汽车"));
+        newsdata.add(HeadLinesFragment.newInstance("时尚"));
         //创建适配器,并且绑定
         newsAdapter = new NewsAdapter(getChildFragmentManager(), newsdata);
         newsVp.setAdapter(newsAdapter);
@@ -42,8 +50,8 @@ public class NewsFragment extends AbsBaseFragment {
 
     @Override
     protected void initDatas() {
-        String[] title = {"头条", "精选", "娱乐", "体育", "网易号", "视频", "财经", "科技", "汽车", "时长", "图片", "直播", "热点", "军事", "历史", "家居"};
-        for (int i = 0; i < 16; i++) {
+        String[] title = {"头条", "精选", "娱乐", "体育", "网易号", "视频", "财经", "科技", "汽车", "时尚"};
+        for (int i = 0; i < 10; i++) {
             newsTl.getTabAt(i).setText(title[i]);
         }
 

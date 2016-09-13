@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="35dp"
         android:background="#D0352A">
 
         <ImageView
@@ -16,11 +16,31 @@
             android:layout_alignParentBottom="true"
             android:layout_margin="10dp"
             android:src="@mipmap/netease_default" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/serch"
+            android:layout_marginRight="20dp"
+           />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/a3t" />
+        </LinearLayout>
     </RelativeLayout>
     <!--创建TabLayout布局-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:orientation="horizontal">
 
         <android.support.design.widget.TabLayout
@@ -33,12 +53,12 @@
             app:tabTextColor="#bdc0c1"
             app:tabSelectedTextColor="#D0352A"/>
 
-        <CheckBox
-            android:layout_width="0dp"
+        <ImageView
+            android:layout_width="20dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
+            android:layout_height="15dp"
             android:layout_gravity="center_vertical"
-            android:button="@drawable/handline_selector"/>
+            android:src="@drawable/handline_selector"/>
     </LinearLayout>
 
     <android.support.v4.view.ViewPager

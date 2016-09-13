@@ -28,9 +28,9 @@ public class TalkFragment extends AbsBaseFragment {
         talkTl = findView(R.id.talk_tab_layout);
         talkVp = findView(R.id.talk_view_pager);
         talkdatas = new ArrayList<>();
-        for (int i = 0; i < 3; i++) {
-            talkdatas.add(new AskFragment());
-        }
+        talkdatas.add(AskFragment.newInstance("问吧"));
+        talkdatas.add(AskFragment.newInstance("话题"));
+        talkdatas.add(AskFragment.newInstance("关注"));
         //创建适配器,并且绑定
         talkAdapter = new TalkAdapter(getChildFragmentManager(), talkdatas);
         talkVp.setAdapter(talkAdapter);

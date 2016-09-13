@@ -28,9 +28,8 @@ public class OnlineFragment extends AbsBaseFragment{
         onlineTl = findView(R.id.online_tab_layout);
         onlineVp = findView(R.id.online_view_pager);
         onlinedata = new ArrayList<>();
-        for (int i = 0; i < 2; i++) {
-            onlinedata.add(new HotFragment());
-        }
+        onlinedata.add(HotFragment.newInstance("热门"));
+        onlinedata.add(HotFragment.newInstance("分类"));
         //初始化适配器
         onlineAdapter = new OnlineAdapter(getChildFragmentManager(), onlinedata);
         onlineVp.setAdapter(onlineAdapter);

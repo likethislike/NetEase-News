@@ -18,6 +18,8 @@ public class NewsFragment extends AbsBaseFragment {
     private TabLayout newsTl;
     private List<Fragment> newsdata;
     private NewsAdapter newsAdapter;
+    private String selecttionUrl = "http://c.3g.163.com/nc/article/list/T1467284926140/0-20.html";
+    private String recreationUrl = "http://c.3g.163.com/nc/article/list/T1348648517839/0-20.html";
 
     @Override
     protected int setLayout() {
@@ -28,11 +30,15 @@ public class NewsFragment extends AbsBaseFragment {
     protected void initViews() {
         newsVp = findView(R.id.news_view_pager);
         newsTl = findView(R.id.news_tab_layout);
+
+    }
+
+    @Override
+    protected void initDatas() {
         newsdata = new ArrayList<>();
-        //使用单列fragment方法
         newsdata.add(HeadLinesFragment.newInstance("头条"));
-        newsdata.add(HeadLinesFragment.newInstance("精选"));
-        newsdata.add(HeadLinesFragment.newInstance("娱乐"));
+        newsdata.add(HeadLinesFragment.newInstance(selecttionUrl));
+        newsdata.add(HeadLinesFragment.newInstance(recreationUrl));
         newsdata.add(HeadLinesFragment.newInstance("体育"));
         newsdata.add(HeadLinesFragment.newInstance("易网号"));
         newsdata.add(HeadLinesFragment.newInstance("视频"));
@@ -46,15 +52,10 @@ public class NewsFragment extends AbsBaseFragment {
         //设置ViewPager和TabLayout联动
         newsTl.setupWithViewPager(newsVp);
         newsTl.setTabMode(TabLayout.MODE_SCROLLABLE);
-    }
-
-    @Override
-    protected void initDatas() {
         String[] title = {"头条", "精选", "娱乐", "体育", "网易号", "视频", "财经", "科技", "汽车", "时尚"};
         for (int i = 0; i < 10; i++) {
             newsTl.getTabAt(i).setText(title[i]);
         }
-
     }
 
 

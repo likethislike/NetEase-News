@@ -14,37 +14,35 @@ import com.netease.netease.R;
 /**
  * Created by dllo on 16/9/12.
  */
-public class AskFragment extends Fragment{
+public class AskFragment extends AbsBaseFragment {
     private ListView asklv;
     private TextView askTv;
 
     public static AskFragment newInstance(String str) {
 
         Bundle args = new Bundle();
-        args.putString("text",str);
+        args.putString("text", str);
         AskFragment fragment = new AskFragment();
         fragment.setArguments(args);
         return fragment;
     }
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_ask,container,false);
+    protected int setLayout() {
+        return R.layout.fragment_ask;
     }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        askTv = (TextView) view.findViewById(R.id.aks_tv);
+    protected void initViews() {
+        asklv = findView(R.id.ask_list_view);
+        askTv = findView(R.id.aks_tv);
+
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    protected void initDatas() {
         Bundle bundle = getArguments();
         String string = bundle.getString("text");
-
         askTv.setText(string);
 
     }

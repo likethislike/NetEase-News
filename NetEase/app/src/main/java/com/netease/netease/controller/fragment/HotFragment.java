@@ -14,7 +14,7 @@ import com.netease.netease.R;
 /**
  * Created by dllo on 16/9/12.
  */
-public class HotFragment extends Fragment{
+public class HotFragment extends AbsBaseFragment{
     private ListView hotlv;
     private TextView hotTv;
 
@@ -27,23 +27,22 @@ public class HotFragment extends Fragment{
         return fragment;
     }
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_hot,container,false);
+    protected int setLayout() {
+        return R.layout.fragment_hot;
     }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        hotTv = (TextView) view.findViewById(R.id.hot_tv);
+    protected void initViews() {
+        hotTv = findView(R.id.hot_tv);
+
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    protected void initDatas() {
         Bundle bundle = getArguments();
         String string = bundle.getString("text");
         hotTv.setText(string);
+
     }
 }

@@ -51,6 +51,7 @@ public abstract class AbsBaseFragment extends Fragment{
 
     //初始化组件findViewById
     protected <T extends View> T findView(int resId){
+
         return (T) getView().findViewById(resId);
     }
     //跳转

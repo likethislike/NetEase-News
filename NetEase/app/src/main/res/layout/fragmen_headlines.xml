@@ -3,11 +3,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <TextView
-        android:id="@+id/headlines_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/headlines_img_iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@mipmap/ic_launcher"/>
+        <TextView
+            android:id="@+id/headlines_type_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="aaaaa"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="50dp"/>
+        </RelativeLayout>
+
+    </FrameLayout>
 
     <ListView
         android:id="@+id/headlines_list_view"

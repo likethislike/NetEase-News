@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.netease.netease">
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:name=".controller.app.NetEaseApp"
@@ -16,7 +17,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--登录界面-->
         <activity android:name=".controller.activity.LoginActivity"/>
+        <!--设置界面-->
+        <activity android:name=".controller.activity.SettingActivity"/>
+        <!--我的消息界面-->
+        <activity android:name=".controller.activity.MessageActivity"/>
     </application>
 
 </manifest>

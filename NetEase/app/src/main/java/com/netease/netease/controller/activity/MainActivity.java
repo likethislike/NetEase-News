@@ -2,16 +2,13 @@ package com.netease.netease.controller.activity;
 
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.WindowManager;
 import android.widget.RadioGroup;
 
 import com.netease.netease.R;
-import com.netease.netease.controller.fragment.NewsFragment;
-import com.netease.netease.controller.fragment.OnlineFragment;
-import com.netease.netease.controller.fragment.PersonFragment;
-import com.netease.netease.controller.fragment.TalkFragment;
+import com.netease.netease.controller.fragment.newsfragment.NewsFragment;
+import com.netease.netease.controller.fragment.onlinefragment.OnlineFragment;
+import com.netease.netease.controller.fragment.personfragment.PersonFragment;
+import com.netease.netease.controller.fragment.talkfragment.TalkFragment;
 
 public class MainActivity extends AbsBaseActivity implements RadioGroup.OnCheckedChangeListener {
     private RadioGroup radioGroup;

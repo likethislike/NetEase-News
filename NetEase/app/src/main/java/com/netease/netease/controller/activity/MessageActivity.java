@@ -7,8 +7,8 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.netease.netease.R;
-import com.netease.netease.controller.adapter.MessageAdapter;
-import com.netease.netease.controller.fragment.MessageFragment;
+import com.netease.netease.controller.adapter.personadapter.MessageAdapter;
+import com.netease.netease.controller.fragment.personfragment.MessageFragment;
 
 import java.util.ArrayList;
 import java.util.List;

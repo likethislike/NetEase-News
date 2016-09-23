@@ -23,6 +23,8 @@
         <activity android:name=".controller.activity.SettingActivity"/>
         <!--我的消息界面-->
         <activity android:name=".controller.activity.MessageActivity"/>
+        <!--意见与反馈-->
+        <activity android:name=".controller.activity.FeedbackActivity"/>
     </application>
 
 </manifest>

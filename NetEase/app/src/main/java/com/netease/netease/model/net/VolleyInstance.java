@@ -9,6 +9,7 @@ import com.netease.netease.controller.app.NetEaseApp;
 
 /**
  * Created by dllo on 16/9/19.
+ * Volley基类
  */
 public class VolleyInstance {
     /**
@@ -45,21 +46,29 @@ public class VolleyInstance {
      * *2.对外提供获取方法: 进行单例判断
      */
 
-    // 2-1
+
     private static VolleyInstance instance;
-    // 定义请求队列
+    /**
+     * 定义请求队列
+     */
     private RequestQueue requestQueue;
 
-    //1.私用的构造方法
+    /**
+     * 1.私用的构造方法
+     */
     private VolleyInstance() {
         requestQueue = Volley.newRequestQueue(NetEaseApp.getContext());
     }
 
     //2-2
     public static VolleyInstance getInstance() {
-        // 如果该对象是null
+        /**
+         * 如果该对象是null
+         */
         if (instance == null) {
-            // 全部线程扫描
+            /**
+             * 全部线程扫描
+             */
             synchronized (VolleyInstance.class) {
                 if (instance == null) {
                     instance = new VolleyInstance();
@@ -76,14 +85,19 @@ public class VolleyInstance {
         final StringRequest sr = new StringRequest(url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                // 如果请求成功将返回数据存储到接口
+                /**
+                 * 如果请求成功将返回数据存储到接口
+                 */
                 result.success(response);
 
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                // 请求失败,通知接口通知调用者请求失败
+
+                /**
+                 * 请求失败,通知接口通知调用者请求失败
+                 */
                 result.failure();
             }
         });

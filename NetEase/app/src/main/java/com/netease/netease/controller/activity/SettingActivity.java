@@ -7,6 +7,7 @@ import com.netease.netease.R;
 
 /**
  * Created by dllo on 16/9/14.
+ * 设置界面Activity
  */
 public class SettingActivity extends AbsBaseActivity implements View.OnClickListener {
     private ImageView settingIv;

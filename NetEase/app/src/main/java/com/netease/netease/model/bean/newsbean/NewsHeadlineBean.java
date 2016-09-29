@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  * Created by dllo on 16/9/13.
- * 头条网络数据的实体类
+ * 新闻头条界面数据实体类
  */
 public class NewsHeadlineBean {
 

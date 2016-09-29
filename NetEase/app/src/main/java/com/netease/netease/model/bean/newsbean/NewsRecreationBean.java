@@ -1,10 +1,13 @@
 package com.netease.netease.model.bean.newsbean;
 
 
+import com.squareup.picasso.RequestCreator;
+
 import java.util.List;
 
 /**
  * Created by dllo on 16/9/14.
+ * 新闻娱乐界面数据实体类
  */
 public class NewsRecreationBean {
 
@@ -90,6 +93,10 @@ public class NewsRecreationBean {
          */
 
         private List<ImgextraBean> imgextra;
+
+        public T1348648517839Bean(RequestCreator load) {
+
+        }
 
         public String getPostid() {
             return postid;

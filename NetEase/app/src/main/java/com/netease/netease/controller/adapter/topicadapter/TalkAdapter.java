@@ -8,6 +8,7 @@ import java.util.List;
 
 /**
  * Created by dllo on 16/9/12.
+ * 话题模块,fragment适配器
  */
 public class TalkAdapter extends FragmentPagerAdapter{
     private List<Fragment> fragments;

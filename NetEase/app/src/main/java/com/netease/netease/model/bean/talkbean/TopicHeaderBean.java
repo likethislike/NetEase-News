@@ -1,9 +1,10 @@
-package com.netease.netease.model.bean;
+package com.netease.netease.model.bean.talkbean;
 
 import java.util.List;
 
 /**
  * Created by dllo on 16/9/22.
+ * 话题界面头布局实体类
  */
 public class TopicHeaderBean {
 

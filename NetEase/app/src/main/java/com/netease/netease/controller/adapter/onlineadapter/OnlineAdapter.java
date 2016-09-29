@@ -8,6 +8,7 @@ import java.util.List;
 
 /**
  * Created by dllo on 16/9/12.
+ * 直播模块,fragment适配器
  */
 public class OnlineAdapter extends FragmentPagerAdapter{
     private List<Fragment> fragments;

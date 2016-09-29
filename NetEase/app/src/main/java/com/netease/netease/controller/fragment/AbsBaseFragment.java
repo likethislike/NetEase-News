@@ -13,6 +13,7 @@ import com.netease.netease.controller.activity.AbsBaseActivity;
 
 /**
  * Created by dllo on 16/9/10.
+ * fragment基类
  */
 public abstract class AbsBaseFragment extends Fragment{
     protected Context context;
@@ -32,14 +33,18 @@ public abstract class AbsBaseFragment extends Fragment{
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        //初始化组件
+        /**
+         * 初始化组件
+         */
         initViews();
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        //使用数据
+        /**
+         * 使用数据
+         */
         initDatas();
     }
 
@@ -49,12 +54,18 @@ public abstract class AbsBaseFragment extends Fragment{
 
     protected abstract void initDatas();
 
-    //初始化组件findViewById
+
+    /**
+     * 初始化组件findViewById
+     */
     protected <T extends View> T findView(int resId){
 
         return (T) getView().findViewById(resId);
     }
-    //跳转
+
+    /**
+     * 跳转
+     */
     protected void goTo(Class<? extends AbsBaseActivity>to){
         context.startActivity(new Intent(context, to));
     }

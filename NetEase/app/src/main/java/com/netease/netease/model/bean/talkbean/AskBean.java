@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * Created by dllo on 16/9/18.
+ * 话题问吧界面数据实体类
  */
 public class AskBean {
 

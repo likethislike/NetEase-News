@@ -7,6 +7,7 @@ import com.netease.netease.R;
 
 /**
  * Created by dllo on 16/9/13.
+ * 登录界面
  */
 public class LoginActivity extends AbsBaseActivity implements View.OnClickListener {
     private ImageView backIv;

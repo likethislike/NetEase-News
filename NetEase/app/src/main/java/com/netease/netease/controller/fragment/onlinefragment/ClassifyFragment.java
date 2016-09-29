@@ -1,6 +1,8 @@
 package com.netease.netease.controller.fragment.onlinefragment;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.ListView;
 
 import com.android.volley.RequestQueue;
@@ -24,7 +26,7 @@ import java.util.List;
  * Created by dllo on 16/9/23.
  * 直播模块,分类界面fragment
  */
-public class ClassifyFragment extends AbsBaseFragment{
+public class ClassifyFragment extends AbsBaseFragment {
     private ListView classifyLv;
     private ClassifyAdapter classifyAdapter;
 
@@ -38,6 +40,7 @@ public class ClassifyFragment extends AbsBaseFragment{
         fragment.setArguments(args);
         return fragment;
     }
+
     @Override
     protected int setLayout() {
 
@@ -53,6 +56,9 @@ public class ClassifyFragment extends AbsBaseFragment{
 
     @Override
     protected void initDatas() {
+        View view = LayoutInflater.from(context).inflate(R.layout.online_classify_header, null);
+        classifyLv.addHeaderView(view);
+
         classifyAdapter = new ClassifyAdapter(context);
         classifyLv.setAdapter(classifyAdapter);
         queue = Volley.newRequestQueue(context);

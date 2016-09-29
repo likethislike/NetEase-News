@@ -45,6 +45,9 @@ public final class ValueTools {
      * 话题模块话题界面网络数据接口
      */
     public static final String TALKTOPICURL = "http://topic.comment.163.com/topic/list/subject/0-10.html";
-
+    /**
+     * 话题模块,话题头布局网络数据接口
+     */
+    public static final String TALKTOPICHEADERURL = "http://c.m.163.com/recommend/getChanRecomNews?channel=T1460094487214&size=5";
 
 }

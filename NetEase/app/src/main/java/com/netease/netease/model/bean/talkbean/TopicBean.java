@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * Created by dllo on 16/9/20.
+ * 话题界面数据实体类
  */
 public class TopicBean {
 

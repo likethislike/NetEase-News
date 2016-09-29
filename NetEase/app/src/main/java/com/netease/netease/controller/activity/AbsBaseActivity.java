@@ -12,41 +12,62 @@ import android.view.WindowManager;
 
 /**
  * Created by dllo on 16/9/10.
+ * Activity基类
  */
 public abstract class AbsBaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //设置状态栏与duak栏颜色相同,属于沉浸式状态栏
+        /**
+         * 设置状态栏与duak栏颜色相同,属于沉浸式状态栏
+         */
         Window window = getWindow();
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        //Color.parseColor 将不是int类型的颜色转换为int类型
-        //为状态栏添加新的颜色
+        /**
+         * Color.parseColor 将不是int类型的颜色转换为int类型
+         * 为状态栏添加新的颜色
+         */
         window.setStatusBarColor(Color.parseColor("#D0352A"));
-        //定制流程
+        /**
+         * 定制流程
+         */
         setContentView(setLayout());
-        //初始化组件
+        /**
+         * 初始化组件
+         */
         initView();
-        //初始化数据
+        /**
+         * 初始化数据
+         */
         initDatas();
     }
 
-    //设置布局文件
+    /**
+     * 设置布局文件
+     * @return
+     */
     protected abstract int setLayout();
 
-    //初始化组件
+    /**
+     * 初始化组件
+     */
     protected abstract void initView();
 
-    //初始化数据
+    /**
+     * 初始化数据
+     */
     protected abstract void initDatas();
-
-    //简化findViewById
+    /**
+     * 简化findViewById
+     */
     protected <T extends View> T findView(int resId) {
         return (T) findViewById(resId);
     }
 
-    //跳转不传值
+    /**
+     * 跳转不传值
+     */
     protected void goTo(Context from, Class<? extends AbsBaseActivity> to) {
         startActivity(new Intent(from, to));
     }
@@ -60,8 +81,9 @@ public abstract class AbsBaseActivity extends AppCompatActivity {
         intent.putExtras(extras);
         startActivity(intent);
     }
-
-    //Activity结束动画
+    /**
+     * Activity结束动画
+     */
     public void finis() {
         super.fileList();
     }

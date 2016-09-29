@@ -19,13 +19,14 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by dllo on 16/9/20.
+ * 话题模块,话题界面适配器
  */
 public class TopicAdapter extends BaseAdapter {
     private List<TopicBean.DataBean.SubjectListBean> datas;
     private Context context;
     private LayoutInflater inflater;
-    private static final int ITEM_TOPIC = 0;// 文字帖
-    private static final int ITEM_IMG = 1; //图片
+    private static final int ITEM_TOPIC = 0;
+    private static final int ITEM_IMG = 1;
 
     public TopicAdapter(Context context) {
         this.context = context;
@@ -80,7 +81,7 @@ public class TopicAdapter extends BaseAdapter {
         TopicHolder topicHolder = null;
         ImgHolder imgHolder = null;
         int type = getItemViewType(position);
-        //加载行布局 + 缓存行布局组件
+
         if (convertView == null) {
             switch (type) {
                 case ITEM_TOPIC:
@@ -138,7 +139,9 @@ public class TopicAdapter extends BaseAdapter {
         return convertView;
     }
 
-    //文字帖布局的数据缓存类
+    /**
+     * 文字帖布局的数据缓存类
+     */
     class TopicHolder {
         TextView topicTv;
         ImageView suernameIv, oneSuerNameIv;
@@ -157,9 +160,9 @@ public class TopicAdapter extends BaseAdapter {
         }
 
     }
-
-
-    //图片缓存类
+    /**
+     * 图片缓存类
+     */
     class ImgHolder {
         TextView imgTitleTv;
         ImageView oneImgIv, twoImgIv, threeImgIv;

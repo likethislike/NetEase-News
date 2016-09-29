@@ -9,6 +9,7 @@ import com.netease.netease.controller.fragment.AbsBaseFragment;
 
 /**
  * Created by dllo on 16/9/14.
+ * 个人中心,我的消息fragment
  */
 public class MessageFragment extends AbsBaseFragment {
     private ImageView msgIv;

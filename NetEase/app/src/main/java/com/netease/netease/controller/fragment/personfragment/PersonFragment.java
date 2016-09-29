@@ -18,6 +18,7 @@ import com.netease.netease.controller.fragment.AbsBaseFragment;
 
 /**
  * Created by dllo on 16/9/10.
+ * 个人中心fragment
  */
 public class PersonFragment extends AbsBaseFragment implements View.OnClickListener {
     private Button loginBtn;

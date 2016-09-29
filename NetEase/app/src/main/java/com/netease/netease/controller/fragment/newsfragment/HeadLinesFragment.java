@@ -17,6 +17,7 @@ import java.util.List;
 
 /**
  * Created by dllo on 16/9/10.
+ * 新闻模块.头条fragment
  */
 public class HeadLinesFragment extends AbsBaseFragment {
     private ListView headlineLv;

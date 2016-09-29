@@ -23,8 +23,9 @@ public class SportAdapter extends BaseAdapter {
     private Context context;
     private List<NewsSportsBean.T1348649079062Bean> datas;
     private LayoutInflater inflater;
-    private static final int TYPE_NEWS_CONTENT = 0;
-    private static final int TYPE_NEWS_PICTURE = 1;
+    private static final int TYPE_NEWS_ALL_CONTENT = 0;
+    private static final int TYPE_NEWS_ALL_PICTURE = 1;
+    private static final int TYPE_NEWS_ALL_ORIGINALITY = 2;
 
     public SportAdapter(Context context) {
         this.context = context;
@@ -36,18 +37,16 @@ public class SportAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
 
-    private boolean ifHasData() {
-        return datas != null && datas.size() > 0;
-    }
 
     @Override
     public int getCount() {
-        return ifHasData() ? datas.size() : 0;
+        return datas == null ? 0 : datas.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return ifHasData() ? datas.get(position) : null;
+
+        return datas == null ? null : datas.get(position);
     }
 
     @Override
@@ -60,12 +59,22 @@ public class SportAdapter extends BaseAdapter {
      * 返回行布局类型
      */
     public int getItemViewType(int position) {
-        int type = datas.get(position).getType();
-        if (0 == type) {
-            return TYPE_NEWS_CONTENT;
-        } else {
-            return TYPE_NEWS_PICTURE;
+        if (datas.get(position).getOrder() == 1 && datas.get(position).getHasHead() != 1 ) {
+            return TYPE_NEWS_ALL_CONTENT;
+        } else if (null != datas.get(position).getSkipType() && "photoset".equals(datas.get(position).getSkipType())&& datas.get(position).getHasHead() != 1) {
+
+            return TYPE_NEWS_ALL_PICTURE;
         }
+
+        else if (datas.get(position).getImgType() == 1) {
+
+            return TYPE_NEWS_ALL_ORIGINALITY;
+
+        } else {
+
+            return 0;
+        }
+
     }
 
     /**
@@ -80,15 +89,17 @@ public class SportAdapter extends BaseAdapter {
         ContentViewHolder contentViewHolder = null;
         PictureViewHolder pictureViewHolder = null;
         int type = getItemViewType(position);
-        //加载行布局+缓存行布局组件
+        /**
+         * 加载行布局 + 缓存行布局组件
+         */
         if (convertView == null) {
             switch (type) {
-                case TYPE_NEWS_CONTENT:
+                case TYPE_NEWS_ALL_CONTENT:
                     convertView = inflater.inflate(R.layout.item_all_news_content, parent, false);
                     contentViewHolder = new ContentViewHolder(convertView);
                     convertView.setTag(contentViewHolder);
                     break;
-                case TYPE_NEWS_PICTURE:
+                case TYPE_NEWS_ALL_PICTURE:
                     convertView = inflater.inflate(R.layout.item_all_news_picture, parent, false);
                     pictureViewHolder = new PictureViewHolder(convertView);
                     convertView.setTag(pictureViewHolder);
@@ -96,28 +107,28 @@ public class SportAdapter extends BaseAdapter {
             }
         } else {
             switch (type) {
-                case TYPE_NEWS_CONTENT:
+                case TYPE_NEWS_ALL_CONTENT:
                     contentViewHolder = (ContentViewHolder) convertView.getTag();
                     break;
-                case TYPE_NEWS_PICTURE:
+                case TYPE_NEWS_ALL_PICTURE:
                     pictureViewHolder = (PictureViewHolder) convertView.getTag();
             }
 
         }
         NewsSportsBean.T1348649079062Bean bean = datas.get(position);
         switch (type) {
-            case TYPE_NEWS_CONTENT:
+            case TYPE_NEWS_ALL_CONTENT:
                 Picasso.with(context).load(bean.getImgsrc()).into(contentViewHolder.contentIv);
                 contentViewHolder.contentTitleTv.setText(bean.getTitle());
                 contentViewHolder.contentSortTv.setText(bean.getSource());
                 contentViewHolder.contentKindTv.setText(bean.getReplyCount() + "跟帖");
 
                 break;
-            case TYPE_NEWS_PICTURE:
+            case TYPE_NEWS_ALL_PICTURE:
                 pictureViewHolder.pictureTitleTv.setText(bean.getTitle());
                 Picasso.with(context).load(bean.getImgsrc()).into(pictureViewHolder.pictureOneIv);
-//                Picasso.with(context).load(bean.getImgextra().get(0).getImgsrc()).into(pictureViewHolder.pictureTwoIv);
-//                Picasso.with(context).load(bean.getImgextra().get(1).getImgsrc()).into(pictureViewHolder.pictureThreeIv);
+                Picasso.with(context).load(datas.get(position).getImgextra().get(0).getImgsrc()).into(pictureViewHolder.pictureTwoIv);
+                Picasso.with(context).load(datas.get(position).getImgextra().get(1).getImgsrc()).into(pictureViewHolder.pictureThreeIv);
                 pictureViewHolder.pictureWebTv.setText(bean.getSource());
                 pictureViewHolder.pictureAbrodTv.setText(bean.getReplyCount() + "跟帖");
                 break;

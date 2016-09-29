@@ -34,15 +34,21 @@ public class MainActivity extends AbsBaseActivity implements RadioGroup.OnChecke
 
     @Override
     protected void initDatas() {
-        //创建radioGroup点击事件
+        /**
+         * 创建radioGroup点击事件
+         */
         radioGroup.setOnCheckedChangeListener(this);
-        //设置进入界面显示的第一个Fragment
+        /**
+         * 设置进入界面显示的第一个Fragment
+         */
         radioGroup.check(R.id.main_netease_news);
     }
 
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
-        //定义Fragment管理类和业务类
+        /**
+         * 定义Fragment管理类和业务类
+         */
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         switch (checkedId) {
@@ -59,7 +65,9 @@ public class MainActivity extends AbsBaseActivity implements RadioGroup.OnChecke
                 fragmentTransaction.replace(R.id.main_frame, personFragment);
                 break;
         }
-        //提交业务
+        /**
+         * 提交业务
+         */
         fragmentTransaction.commit();
     }
 }

@@ -1,11 +1,13 @@
 package com.netease.netease.model.bean.onlinebean;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by dllo on 16/9/23.
+ * 直播热门界面数据实体类
  */
-public class OnlineHotBean {
+public class OnlineHotBean implements Serializable{
 
     /**
      * nextPage : 2

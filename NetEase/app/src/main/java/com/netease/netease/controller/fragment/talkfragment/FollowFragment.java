@@ -7,6 +7,7 @@ import com.netease.netease.controller.fragment.AbsBaseFragment;
 
 /**
  * Created by dllo on 16/9/18.
+ * 话题模块,关注界面fragment
  */
 public class FollowFragment extends AbsBaseFragment{
     private ImageView followIv;

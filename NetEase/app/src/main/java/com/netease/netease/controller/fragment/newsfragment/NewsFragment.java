@@ -13,6 +13,7 @@ import java.util.List;
 
 /**
  * Created by dllo on 16/9/10.
+ * 新闻模块fragment
  */
 public class NewsFragment extends AbsBaseFragment {
     private ViewPager newsVp;
@@ -40,10 +41,10 @@ public class NewsFragment extends AbsBaseFragment {
         newsdata.add(RecreationFragment.newInstance());
         newsdata.add(SorptFragment.newInstance());
 
-        //创建适配器,并且绑定
+
         newsAdapter = new NewsAdapter(getChildFragmentManager(), newsdata);
         newsVp.setAdapter(newsAdapter);
-        //设置ViewPager和TabLayout联动
+
         newsTl.setupWithViewPager(newsVp);
         newsTl.setTabMode(TabLayout.MODE_SCROLLABLE);
         String[] title = {"头条", "精选", "娱乐", "体育", "网易号", "视频", "财经", "科技", "汽车", "时尚"};

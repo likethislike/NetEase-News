@@ -17,6 +17,7 @@ import java.util.List;
 
 /**
  * Created by dllo on 16/9/23.
+ * 新闻模块,体育界面fragment
  */
 public class SorptFragment extends AbsBaseFragment{
     private ListView newsLv;
@@ -25,7 +26,6 @@ public class SorptFragment extends AbsBaseFragment{
     public static SorptFragment newInstance() {
 
         Bundle args = new Bundle();
-
         SorptFragment fragment = new SorptFragment();
         fragment.setArguments(args);
         return fragment;

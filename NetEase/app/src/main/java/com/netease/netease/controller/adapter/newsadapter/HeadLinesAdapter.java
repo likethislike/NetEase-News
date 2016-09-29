@@ -58,12 +58,13 @@ public class HeadLinesAdapter extends BaseAdapter{
         }
         Picasso.with(context).load(datas.get(position).getImgsrc()).into(headlineViewHolder.headlineIv);
         headlineViewHolder.titleTv.setText(datas.get(position).getTitle());
-//        headlineViewHolder.sortTv.setText(datas.get(position).);
 
         return convertView;
     }
 
-    //创建缓存类
+    /**
+     * 创建缓存类
+     */
     class HeadlineViewHolder{
         ImageView headlineIv;
         TextView titleTv;

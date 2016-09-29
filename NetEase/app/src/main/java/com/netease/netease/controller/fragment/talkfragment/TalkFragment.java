@@ -12,6 +12,7 @@ import java.util.List;
 
 /**
  * Created by dllo on 16/9/10.
+ * 话题模块fragment
  */
 public class TalkFragment extends AbsBaseFragment {
     private TalkAdapter talkAdapter;
@@ -37,10 +38,10 @@ public class TalkFragment extends AbsBaseFragment {
         talkdatas.add(new TopicFragment());
         talkdatas.add(new FollowFragment());
 
-        //创建适配器,并且绑定
+
         talkAdapter = new TalkAdapter(getChildFragmentManager(), talkdatas);
         talkVp.setAdapter(talkAdapter);
-        //设置ViewPager和TabLayout联动
+
         talkTl.setupWithViewPager(talkVp);
         talkTl.setTabMode(TabLayout.MODE_SCROLLABLE);
        String [] talktitle = {"问吧", "话题", "关注"};

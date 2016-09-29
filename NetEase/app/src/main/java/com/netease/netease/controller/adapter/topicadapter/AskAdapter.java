@@ -18,7 +18,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by dllo on 16/9/18.
- * 问吧界面适配器
+ * 话题模块,问吧界面适配器
  */
 public class AskAdapter extends RecyclerView.Adapter<AskAdapter.ViewHolder>{
     private Context context;
@@ -62,9 +62,10 @@ public class AskAdapter extends RecyclerView.Adapter<AskAdapter.ViewHolder>{
     public int getItemCount() {
         return datas != null && datas.size() > 0 ? datas.size() : 0;
     }
-
-    //组件缓存类
-    //内部类
+    /**
+     * 组件缓存类
+     * 内部类
+     */
     public class ViewHolder extends RecyclerView.ViewHolder {
         private CircleImageView titleIv;
         private TextView titleTv, nameTv;

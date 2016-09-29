@@ -13,6 +13,7 @@ import java.util.List;
 
 /**
  * Created by dllo on 16/9/10.
+ * 直播模块fragment
  */
 public class OnlineFragment extends AbsBaseFragment {
     private TabLayout onlineTl;
@@ -31,10 +32,10 @@ public class OnlineFragment extends AbsBaseFragment {
         onlinedata = new ArrayList<>();
         onlinedata.add(HotFragment.newInstance());
         onlinedata.add(ClassifyFragment.newInstance());
-        //初始化适配器
+
         onlineAdapter = new OnlineAdapter(getChildFragmentManager(), onlinedata);
         onlineVp.setAdapter(onlineAdapter);
-        //设置viewpager与tablayout联动
+
         onlineTl.setupWithViewPager(onlineVp);
         onlineTl.setTabMode(TabLayout.MODE_SCROLLABLE);
 

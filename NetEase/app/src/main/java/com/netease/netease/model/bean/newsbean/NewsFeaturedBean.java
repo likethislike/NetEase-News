@@ -75,6 +75,16 @@ public class NewsFeaturedBean {
         private String imgsrc;
         private String tname;
         private String ptime;
+
+        public int getImgType() {
+            return ImgType;
+        }
+
+        public void setImgType(int imgType) {
+            ImgType = imgType;
+        }
+
+        private int ImgType;
         /**
          * imgsrc : http://cms-bucket.nosdn.127.net/249c577360f740578f3405dfb6d56d0120160922163514.jpeg
          */

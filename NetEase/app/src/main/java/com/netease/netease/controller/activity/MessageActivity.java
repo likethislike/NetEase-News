@@ -15,6 +15,7 @@ import java.util.List;
 
 /**
  * Created by dllo on 16/9/14.
+ * 消息界面Activity
  */
 public class MessageActivity extends AbsBaseActivity implements View.OnClickListener {
     private TabLayout msgTl;
@@ -40,12 +41,15 @@ public class MessageActivity extends AbsBaseActivity implements View.OnClickList
         fragments = new ArrayList<>();
         fragments.add(MessageFragment.newInstance(R.mipmap.ach));
         fragments.add(MessageFragment.newInstance(R.mipmap.a97));
-        //创建适配器,并绑定
+        /**
+         * 创建适配器,并绑定
+         */
         messageAdapter = new MessageAdapter(getSupportFragmentManager(),fragments);
         msgVp.setAdapter(messageAdapter);
-        //设置viewpager与tablayout联动
+        /**
+         * 设置viewpager与tablayout联动
+         */
         msgTl.setupWithViewPager(msgVp);
-//        msgTl.setTabMode(TabLayout.MODE_SCROLLABLE);
 
         msgTl.getTabAt(0).setText("评论我的");
         msgTl.getTabAt(1).setText("通知");

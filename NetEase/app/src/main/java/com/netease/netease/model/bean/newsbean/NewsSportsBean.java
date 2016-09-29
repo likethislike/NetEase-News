@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * Created by dllo on 16/9/23.
+ * 新闻体育界面数据实体类
  */
 public class NewsSportsBean {
 
@@ -75,12 +76,15 @@ public class NewsSportsBean {
         private String imgsrc;
         private String tname;
         private String ptime;
-        private int type;
+        private int ImgType;
 
-        public void setType(int type) {
-            this.type = type;
+        public int getImgType() {
+            return ImgType;
         }
 
+        public void setImgType(int imgType) {
+            ImgType = imgType;
+        }
 
         /**
          * title : 福原爱着和服宣布出嫁 俊男美女无比般配
@@ -321,9 +325,6 @@ public class NewsSportsBean {
             this.imgextra = imgextra;
         }
 
-        public int getType() {
-            return type;
-        }
 
 
         public static class AdsBean {

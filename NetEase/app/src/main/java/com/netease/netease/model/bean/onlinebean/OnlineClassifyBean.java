@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * Created by dllo on 16/9/23.
+ * 直播分类界面数据实体类
  */
 public class OnlineClassifyBean {
 
